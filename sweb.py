@@ -1,10 +1,19 @@
-import kid
+from jinja2 import Environment, PackageLoader, select_autoescape
 import os
 
 extensions = {
     'html': 'text/html',
     'atom': 'application/atom+xml'
     }
+
+env = Environment(
+    loader = PackageLoader('sweb', 'templates'),
+    autoescape=select_autoescape(['html', 'xml'])
+    )
+
+template = env.get_template('list.html')
+
+print(template.render(the='variables', go='here'))
 
 def render(start_response, template_file, vars):
     ext = template_file.rsplit('.')

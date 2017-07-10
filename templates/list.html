@@ -1,0 +1,10 @@
+<html lang="en">
+  <head>
+    <title>A Simple Web Server</title>
+  </head>
+  <div py:for="row in rows.fetchall()">
+    <h2>${row.title}</h2>
+    <div>${row.content}</div>
+    <p><a href="./${row.id}/">${row.updated}</a></p>
+  </div>
+</html>
