@@ -1,3 +1,4 @@
+
 import os, sys
 
 def create():
@@ -8,14 +9,14 @@ def create():
             table.create()
 
 def run():
-    import urls
+    import router
     if os.environ.get('REQUEST_METHOD', ''):
         from wsgiref.handlers import BaseCGIHandler
-        BaseCGIHandler(sys.stdin, sys.stdout, sys.stderr, os.environ).run(urls.urls)
+        BaseCGIHandler(sys.stdin, sys.stdout, sys.stderr, os.environ).run(router.urls)
     else:
         from wsgiref.simple_server import WSGIServer, WSGIRequestHandler
         httpd = WSGIServer(('', 8080), WSGIRequestHandler)
-        httpd.set_app(urls.urls)
+        httpd.set_app(router.urls)
         print('Serving HTTP on %s port %s ...' % http.socket.getsockname())
         httpd.serve_forever()
 
