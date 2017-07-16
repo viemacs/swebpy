@@ -1,7 +1,7 @@
 # swebpy
 A simple web server implemented in Python.
 
-## Main Features
+<!-- ## Main Features -->
 
 ## Running
 - create database

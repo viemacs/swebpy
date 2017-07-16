@@ -1,5 +1,6 @@
 from jinja2 import Environment, PackageLoader, select_autoescape
 import os
+from io import StringIO
 
 extensions = {
     'html': 'text/html',
@@ -26,3 +27,7 @@ def render(start_response, template_file, vars):
 
     start_response('200 OK', [('Content-Type', contenttype)])
     return [body]
+
+    # stdout = StringIO()
+    # start_response('200 OK', [('Content-Type', 'text/plain; charset=utf-8')])
+    # return [stdout.getvalue().encode('utf-8')]

@@ -1,3 +1,4 @@
+
 from sqlalchemy import *
 
 metadata = MetaData('sqlite:///tutorial.db')

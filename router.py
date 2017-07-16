@@ -6,3 +6,12 @@ urls.add('/blog', GET=view.list)
 urls.add('/blog/{id}/', GET=view.member_get)
 urls.add('/blog/;create_form', POST=view.create, GET=view.list)
 urls.add('/blog/{id}/;edit_form', GET=view.member_get, POST=view.member_update)
+
+# from werkzeug.routing import Map, Rule
+
+# url_map = Map([
+#     urls.add('/blog', GET=view.list),
+#     urls.add('/blog/{id}/', GET=view.member_get),
+#     urls.add('/blog/;create_form', POST=view.create, GET=view.list),
+#     urls.add('/blog/{id}/;edit_form', GET=view.member_get, POST=view.member_update),
+# ])

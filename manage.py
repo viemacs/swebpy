@@ -62,9 +62,9 @@ def runserver(hostname, port, reloader, debugger, evalex, threaded, processes):
 
 
 if __name__ == '__main__':
+    print(sys.argv)
     if 'create' in sys.argv:
         create()
     elif 'run' in sys.argv:
-        run()
-    else:
+        # run()
         cli()
